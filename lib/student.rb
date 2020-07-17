@@ -26,12 +26,17 @@ class Student
     DB[:conn].execute(sql)
   end
 
-  def save
+  def save(name,grade)
     sql="INSERT INTO students(name,grade) VALUES(?,?)"
-    DB[:conn].execute(sql,@name,@grade)
+    DB[:conn].execute(sql,name,grade)
+    sql1="SELECT id FROM students ORDER BY id DESC LIMIT 1"
+    arr=DB.[:conn].execute(sql1)
+    @id=arr[0]
   end
 
-  def self.create
+  def self.create (name:,grade:)
+    s=Student.new(name,grade)
+        
   end
 
 end
