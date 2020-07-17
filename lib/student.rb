@@ -10,7 +10,7 @@ class Student
 
   attr_accessor :name,:grade
 
-  def self.create_table(DB)
+  def self.create_table()
     sql="CREATE TABLE students(
     id INTEGER PRIMARY KEY,
     name TEXT,
