@@ -30,7 +30,7 @@ class Student
     sql="INSERT INTO students(name,grade) VALUES(?,?)"
     DB[:conn].execute(sql,name,grade)
     sql1="SELECT id FROM students ORDER BY id DESC LIMIT 1"
-    arr=DB.[:conn].execute(sql1)
+    arr=DB[:conn].execute(sql1)
     @id=arr[0]
   end
 
